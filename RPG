@@ -1,0 +1,40 @@
+import random
+
+HP_H = 100
+HP_M = 100
+crit_H = 2
+crit_M = 2
+win = None
+crit = ""
+
+while HP_H > 0 or HP_M > 0:
+    atk_H = random.randint(5, 10)
+    if random.randint(1, 10) <= crit_H:
+        atk_H = atk_H * 2
+        crit = "Кріт!"
+
+    HP_M -= atk_H
+
+    print(f"{crit} Герой ударив на {atk_H} урону. У монстра лишилось {HP_M} HP.")
+    crit = ""
+    if HP_M <= 0:
+        print("Yipee")
+        win = "Герой"
+        break
+
+    # ---------------------------------------------------------------
+    
+    atk_M = random.randint(5, 10)
+    if random.randint(1, 10) <= crit_M:
+        atk_M = atk_M * 2
+        crit = "Кріт!"
+    HP_H -= atk_M
+
+    print(f"{crit} Монстр ударив на {atk_M} урону. У героя лишилось {HP_H} HP.")
+    crit = ""
+    if HP_H <= 0:
+        print("Boowomp")
+        win = "Монстр"
+        break
+
+print("Переможець:", win)
