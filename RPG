@@ -28,6 +28,7 @@ while HP_H > 0 or HP_M > 0:
     if random.randint(1, 10) <= crit_M:
         atk_M = atk_M * 2
         crit = "Кріт!"
+        
     HP_H -= atk_M
 
     print(f"{crit} Монстр ударив на {atk_M} урону. У героя лишилось {HP_H} HP.")
