@@ -1,0 +1,20 @@
+def dylnik(a, b, k):
+    count = 0
+    for num in range(a, b+1):
+        if num % k==0:
+            count+=1
+    return count
+
+chysla=[]
+
+a = int(input("Початок проміжку: "))
+b = int(input("Кінець проміжку: "))
+k = int(input("Дільник: "))
+
+for num in range(a, b+1):
+    chysla.append(num)
+result = dylnik(a, b, k)
+
+print(f"Кількість дільників: {result}")
+print(f"Сума числе: {sum(chysla)}")
+print(f"Масив: {chysla}")
